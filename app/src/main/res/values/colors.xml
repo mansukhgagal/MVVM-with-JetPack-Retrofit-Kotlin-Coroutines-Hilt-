@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">#fafafa</color>
+    <color name="colorOnPrimary">#CC000000</color>
+    <color name="colorPrimaryVariant">#f0f0f0</color>
+    <color name="colorSecondary">#018A7A</color>
+    <color name="colorOnSecondary">@color/black_900</color>
+    <color name="colorSecondaryVariant">@color/purple_200</color>
+
+    <color name="colorAccent">#018A7A</color>
+
+
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorOnBackground">#101D25</color>
+    <color name="colorSurface">#f0f0f0</color>
+    <color name="colorOnSurface">@color/black_900</color>
+    <color name="colorError">@color/red_600</color>
+    <color name="colorOnError">@color/white_50</color>
+
+
+    <color name="white">#FFFFFF</color>
+    <color name="colorToolbarTitle">#CC000000</color>
+    <color name="colorToolbarTitleWhite">#FFFFFF</color>
+    <color name="colorDivider">#E8E8E8</color>
+
+    <!--
+    Color
+Color attributes consist mainly of primary, secondary, error, surface and background colors, along with their respective secondary variants and “on” colors. Some of these have been reused from the AppCompat themes (eg. colorPrimary, colorError and android:colorBackground):
+colorPrimary: The primary brand color of your app, used most predominantly in theming
+colorPrimaryVariant: A lighter/darker variant of your primary brand color, used sparingly in theming
+colorOnPrimary: The color used for elements displayed on top of your primary colors (eg. Text and icons, often white or semi-transparent black depending on accessibility)
+colorSecondary: The secondary brand color of your app, used mostly as an accent for certain widgets that need to stand out
+colorSecondaryVariant: A lighter/darker variant of your secondary brand color, used sparingly in theming
+colorOnSecondary: The color used for elements displayed on top of your secondary colors
+colorError: The color used for errors (often a shade of red)
+colorOnError: The color used for elements displayed on top of your error color
+colorSurface: The color used for surfaces (i.e. Material “sheets”)
+colorOnSurface: The color used for elements displayed on top of your surface color
+android:colorBackground: The color behind all other screen content
+colorOnBackground: The color used for elements displayed on top of your background color
+These c
+
+    -->
+
+    <color name="color_dash">@color/colorOnPrimary</color>
+    <color name="start_color">#00FFFFFF</color>
+    <color name="center_color">#00FFFFFF</color>
+    <color name="end_color">@color/colorPrimaryVariant</color>
+    <color name="arrow_color">@color/black_900</color>
+    <color name="colorControlNormal">#CC000000</color>
+    <!--Color-->
+
+    <!--Material uses an organized approach to applying color by -->
+    <!--providing a set of attributes which define semantically named -->
+    <!--colors for generalized UI concepts such as backgrounds, -->
+    <!--surfaces, type and icons. Using these attributes throughout -->
+    <!--your app makes it easy to change a single color, or the -->
+    <!--entire theme, and have those changes cascade through the interface.-->
+
+    <!--Color is customized by overriding Material Components color -->
+    <!--attributes with custom color values. In this project, your theme’s -->
+    <!--color attributes are already overridden with default values -->
+    <!--defined in this file, colors.xml. This file holds the color palette -->
+    <!--for both light and dark themes of the Material baseline (default) -->
+    <!--theme. Next to each color is a comment describing the semantic theme -->
+    <!--color attribute which the palette color maps to.-->
+
+    <!--Replace the colors here with your own brand's palette and ensure -->
+    <!--they are applied as desired in both light and dark theme -->
+    <!--(values/themes.xml and values-night/themes.xml). For more -->
+    <!--information on color palettes and their application color -->
+    <!--theme attributes, see https://www.youtube.com/watch?v=Owkf8DhAOSo-->
+
+    <!--Color palette-->
+
+    <color name="purple_200">#bb86fc</color> <!--Color primary (dark)-->
+    <color name="purple_500">#6200ee</color> <!--Color primary (light)-->
+    <color name="purple_600">#4b01d0</color> <!--Color primary variant (dark)-->
+    <color name="purple_700">#3700b3</color> <!--Color primary variant (light)-->
+
+    <color name="green_200">#03dac6</color> <!--Color secondary-->
+    <color name="green_500">#018786</color> <!--Color secondary variant-->
+
+    <color name="red_200">#cf6679</color> <!--Color error (dark)-->
+    <color name="red_600">#b00020</color> <!--Color error (light)-->
+
+    <!--Color surface (light), color on error (light), -->
+    <!--color on surface (dark), color on surface (dark)-->
+    <color name="white_50">#ffffff</color>
+
+    <color name="black_800">#121212</color> <!--Color surface (dark)-->
+    <!--Color on secondary (light), color on background (light),-->
+    <!--color on surface (light)-->
+    <color name="black_900">#000000</color>
+
+    <color name="pink_100">#ea80fc</color>
+    <color name="pink_200">#e040fb</color>
+    <color name="pink_400">#ea80fc</color>
+    <color name="pink_700">#aa00ff</color>
+
+    <color name="mdtp_accent_color">#F44336</color>
+    <color name="mdtp_accent_color_dark">#00796b</color>
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#99AB99C5</color>
+</resources>

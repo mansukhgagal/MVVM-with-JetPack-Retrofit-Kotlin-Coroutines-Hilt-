@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--Top level DayNight theme to be used in AndroidManifest.xml-->
+    <style name="Theme.MyApp" parent="Base.Theme.MaterialThemeBuilder">
+        <!--Material color attributes (dark theme) -->
+        <!-- colorPrimary: The primary brand color of your app, used most predominantly in theming -->
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!-- colorPrimaryVariant: A lighter/darker variant of your primary brand color, used sparingly in theming -->
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <!--The secondary brand color of your app, used mostly as an accent for certain widgets that need to stand out-->
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <!-- colorSecondaryVariant: A lighter/darker variant of your secondary brand color, used sparingly in theming -->
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+        <!--colorBackground appears behind scrollable content and is used for the default window-->
+        <!--background. colorSurface is mapped to the surface of components such as cards, sheets-->
+        <!--and menus. colorError is used to indicate an error state for components such as-->
+        <!--text fields.-->
+        <!-- android:colorBackground: The color behind all other screen content -->
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <!-- colorSurface: The color used for surfaces (i.e. Material “sheets”) -->
+        <item name="colorSurface">@color/colorSurface</item>
+        <!-- colorError: The color used for errors (often a shade of red) -->
+        <item name="colorError">@color/colorError</item>
+        <!--"On" colors define how text, icons and strokes are colored in relation to the surface-->
+        <!--on which they appear.-->
+        <!-- The color used for elements displayed on top of your primary colors (eg. Text and icons, often white or semi-transparent black depending on accessibility) -->
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <!-- colorOnSecondary: The color used for elements displayed on top of your secondary colors -->
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+        <!-- colorOnBackground: The color used for elements displayed on top of your background color -->
+        <item name="colorOnBackground">@color/colorBackground</item>
+        <!-- colorOnSurface: The color used for elements displayed on top of your surface color -->
+        <item name="colorOnSurface">@color/colorOnSurface</item>
+        <!--Material type attributes-->
+        <item name="colorOnError">@color/colorOnError</item>
+
+        <item name="colorControlNormal">@color/colorControlNormal</item>
+
+        <item name="materialAlertDialogTheme">@style/Theme.Widget.Dialog</item>
+        <item name="alertDialogTheme">@style/Theme.Widget.Dialog</item>
+        <!--        Snackbar-->
+        <item name="snackbarStyle">@style/Widget.App.Snackbar</item>
+        <item name="snackbarButtonStyle">@style/Widget.App.SnackbarButton</item>
+
+    </style>
+
+    <style name="Base.Theme.MaterialThemeBuilder" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="android:statusBarColor" tools:ignore="NewApi">@color/colorSurface</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">false</item>
+        <!--        <item name="android:navigationBarColor" tools:ignore="NewApi">?android:attr/colorBackground</item>-->
+        <!--        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>-->
+        <!--        <item name="android:navigationBarDividerColor" tools:ignore="NewApi">?attr/colorControlHighlight</item>-->
+    </style>
+</resources>
