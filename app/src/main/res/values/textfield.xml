@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns2="http://schemas.android.com/apk/res-auto">
+
+    <style name="Widget.App.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>
+<!--        <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>-->
+        <item name="hintTextColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="ThemeOverlay.App.TextInputLayout" parent="">
+        <item name="colorPrimary">#000</item>
+        <item name="colorOnSurface">#d4d4d4</item>
+        <item name="colorError">#F44336</item>
+        <item name="hintTextColor">@color/purple_200</item>
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="strokeColor">@color/purple_200</item>
+
+<!--        <item name="textAppearanceSubtitle1">@style/TextAppearance.App.Subtitle1</item>-->
+<!--        <item name="textAppearanceCaption">@style/TextAppearance.App.Caption</item>-->
+        <item name="editTextStyle">@style/Widger.TextInputEdittext</item>
+    </style>
+
+    <style name="Widger.TextInputEdittext"  parent="Base.Widget.MaterialComponents.TextInputEditText">
+        <item name="android:background">@null</item>
+        <item name="android:paddingStart" ns2:ignore="NewApi">12dp</item>
+        <item name="android:paddingEnd" ns2:ignore="NewApi">12dp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:textAppearance">?attr/textAppearanceSubtitle1</item>
+    </style>
+
+
+
+
+    <style name="TextAppearance.App.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/slab</item>
+        <item name="android:fontFamily">@font/slab</item>
+    </style>
+
+    <style name="TextAppearance.App.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/slab</item>
+        <item name="android:fontFamily">@font/slab</item>
+    </style>
+
+    <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">4dp</item>
+    </style>
+
+
+    <style name="my_dialog_theme" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="materialCalendarStyle">@style/Widget.MaterialComponents.MaterialCalendar</item>
+        <item name="materialCalendarFullscreenTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen</item>
+        <item name="materialCalendarTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar</item>
+        <item name="colorAccent">@color/colorAccent</item>                   <!--header background-->
+        <item name="android:colorControlActivated">@color/colorAccent</item> <!--selected day-->
+        <item name="android:textColorPrimary">@color/black_800</item> <!--days of the month-->
+        <item name="android:textColorSecondary">@color/colorAccent</item>    <!--days of the week-->
+    </style>
+</resources>

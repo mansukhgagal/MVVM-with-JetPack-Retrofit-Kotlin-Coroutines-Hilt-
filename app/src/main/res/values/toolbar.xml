@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.App.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+       <item name="navigationIcon">@drawable/ic_back</item>
+        <item name="colorControlNormal">@color/colorControlNormal</item>
+    </style>
+    <style name="Widget.App.Toolbar.white" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="navigationIcon">@drawable/ic_back</item>
+        <item name="colorControlNormal">@color/colorToolbarTitleWhite</item>
+    </style>
+</resources>
