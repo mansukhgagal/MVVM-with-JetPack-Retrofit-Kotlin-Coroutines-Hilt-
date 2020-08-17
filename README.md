@@ -1,2 +1,2 @@
-# sample_project
-This Project is basic structure of Android for create application in native kotlin app
+# Android Clean Architecture Navigation components + Retrofit + Kotlin + Kotlin Coroutines
+This Project is basic structure of Android with Retrofit rest client using kotlin coroutines
