@@ -45,6 +45,7 @@ class MainFragment : Fragment() {
         mGlideRequestManager = GlideApp.with(this)
 
         recycler_view.layoutManager = LinearLayoutManager(requireContext())
+        //item decoration
         recycler_view.addItemDecoration(EqualSpacingItemDecoration(2))
         adapter = MainAdapter(requireActivity(), dataList,mGlideRequestManager)
         recycler_view.adapter = adapter
