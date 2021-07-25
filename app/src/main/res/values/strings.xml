@@ -103,4 +103,6 @@
     <string name="menu_share_app">Share app</string>
     <string name="menu_about_us">About us</string>
     <string name="hint_enter_your_name">Enter Your Name</string>
+    <string name="user_image">User Image</string>
+    <string name="message_internet">Check your connection!</string>
 </resources>

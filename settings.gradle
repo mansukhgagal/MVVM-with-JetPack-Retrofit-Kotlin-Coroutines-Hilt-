@@ -1,2 +1,2 @@
-rootProject.name='PEOD_STOCK'
+rootProject.name='SampleProject'
 include ':app'
