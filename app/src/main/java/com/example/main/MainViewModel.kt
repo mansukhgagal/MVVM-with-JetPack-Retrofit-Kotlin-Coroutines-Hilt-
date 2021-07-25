@@ -1,5 +1,6 @@
 package com.example.main
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -11,16 +12,17 @@ import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
 
-    val userList: MutableLiveData<Resource<List<ApiUser>>> = MutableLiveData()
+    private val _userList: MutableLiveData<Resource<List<ApiUser>>> = MutableLiveData()
+    val userList:LiveData<Resource<List<ApiUser>>> get() = _userList
 
     private val exceptionHandler = CoroutineExceptionHandler { _, exception ->
-        userList.postValue(Resource.error(exception.message ?: "Something went wrong", null))
+        _userList.postValue(Resource.error(exception.message ?: "Something went wrong", null))
     }
 
     fun fetch() {
-        userList.postValue(Resource.loading(null))
+        _userList.postValue(Resource.loading(null))
         viewModelScope.launch(exceptionHandler) {
-            userList.postValue(Resource.success(RetrofitBuilder.apiService.getUsers()))
+            _userList.postValue(Resource.success(RetrofitBuilder.apiService.getUsers()))
         }
     }
 }

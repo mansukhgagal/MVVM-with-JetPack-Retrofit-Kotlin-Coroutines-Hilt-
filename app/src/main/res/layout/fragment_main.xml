@@ -21,10 +21,11 @@
             style="@style/Widget.App.Toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:title="Page title"
-            tools:title = "Page title"
+            app:title="Home"
+            tools:title = "HomePage"
             android:elevation="0dp"
-            app:titleTextColor="@color/colorToolbarTitle" />
+            app:titleTextColor="@color/colorToolbarTitle"
+            tools:ignore="UnusedAttribute" />
 
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -39,6 +40,7 @@
             android:id="@+id/recycler_view"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            tools:listitem="@layout/item_list"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

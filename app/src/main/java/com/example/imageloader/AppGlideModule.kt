@@ -14,6 +14,7 @@ import com.bumptech.glide.load.engine.cache.LruResourceCache
 import com.bumptech.glide.load.model.GlideUrl
 import com.bumptech.glide.module.AppGlideModule
 import com.bumptech.glide.request.RequestOptions
+import com.example.BuildConfig
 import com.example.R
 import okhttp3.OkHttpClient
 import java.io.InputStream
@@ -23,7 +24,8 @@ import java.util.concurrent.TimeUnit
 class AppGlideModule : AppGlideModule() {
     override fun applyOptions(context: Context, builder: GlideBuilder) {
         val memoryCacheSizeBytes = 1024 * 1024 * 20 // 20mb
-        builder.setLogLevel(Log.DEBUG)
+        if (BuildConfig.DEBUG)
+            builder.setLogLevel(Log.ERROR)
         builder.setMemoryCache(LruResourceCache(memoryCacheSizeBytes.toLong()))
         builder.setDiskCache(InternalCacheDiskCacheFactory(context, memoryCacheSizeBytes.toLong()))
         builder.setDefaultRequestOptions(requestOption(context))
@@ -42,7 +44,6 @@ class AppGlideModule : AppGlideModule() {
 
     fun requestOption(context: Context): RequestOptions {
         return RequestOptions()
-//            .override(200, 200)
             .centerCrop()
             .placeholder(R.drawable.ic_placeholder_144)
             .error(R.drawable.ic_placeholder_144)

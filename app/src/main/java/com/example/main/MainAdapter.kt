@@ -4,18 +4,22 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.example.R
 import com.example.databinding.ItemEmptyBinding
-import com.example.databinding.ItemProdListBinding
-import com.example.imageloader.GlideApp
+import com.example.databinding.ItemListBinding
+import com.example.imageloader.GlideRequests
 import com.example.model.ApiUser
 import com.example.utils.EmptyVH
+import com.example.utils.Utils
 
-class MainAdapter(val context: Context, private val dataList: List<Any>) :
+class MainAdapter(val context: Context,
+                  private val dataList: List<Any>,
+                  private val glideRequest: GlideRequests) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val inflater = LayoutInflater.from(context)
@@ -27,7 +31,7 @@ class MainAdapter(val context: Context, private val dataList: List<Any>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         when (viewType) {
             VT_USER_LIST -> {
-                val binding = ItemProdListBinding.inflate(inflater, parent, false)
+                val binding = ItemListBinding.inflate(inflater, parent, false)
                 return ProductListVH(binding)
             }
             else -> {
@@ -57,12 +61,10 @@ class MainAdapter(val context: Context, private val dataList: List<Any>) :
         val data = dataList[position]
         if (holder is ProductListVH && data is ApiUser) {
             holder.bind(data)
-        } else {
-            //not possible
         }
     }
 
-    inner class ProductListVH(private val binding: ItemProdListBinding) :
+    inner class ProductListVH(private val binding: ItemListBinding) :
         RecyclerView.ViewHolder(binding.root), View.OnClickListener {
         init {
             binding.itemRoot.setOnClickListener(this)
@@ -70,10 +72,8 @@ class MainAdapter(val context: Context, private val dataList: List<Any>) :
 
         override fun onClick(v: View?) {
             if (v?.id == R.id.item_root) {
-//                val intent = Intent(context, ProductDetailsActivity::class.java)
-//                context.startActivity(intent)
+                Toast.makeText(context,"clicked!",Toast.LENGTH_SHORT).show()
             }
-//            v?.findNavController()?.navigate(R.id.action_homeFragment_to_categoryFragment)
         }
 
         fun bind(data: ApiUser) {
@@ -83,8 +83,8 @@ class MainAdapter(val context: Context, private val dataList: List<Any>) :
             binding.textPrice.text = data.id.toString()
             binding.textIngradient.text = data.name
 
-            GlideApp.with(binding.imageCat.context)
-                .load(data.avatar)
+            glideRequest
+                .load(Utils.randomURL())
                 .apply(RequestOptions().transform(CenterCrop(), RoundedCorners(8)))
                 .into(binding.imageCat)
         }
