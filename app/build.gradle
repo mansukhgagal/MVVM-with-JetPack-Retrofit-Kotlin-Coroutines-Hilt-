@@ -1,14 +1,18 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: "androidx.navigation.safeargs.kotlin"
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-parcelize'
+}
+
 android {
     compileSdkVersion 30
 
     defaultConfig {
         applicationId "com.example.android"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -22,14 +26,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
+    kotlinOptions {
+        jvmTarget = '1.8'
+        useIR = true
+    }
     buildFeatures {
-        dataBinding true
+        compose true
         viewBinding true
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion rootProject.composeVersion
     }
 }
 
@@ -39,30 +49,29 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$appcompact_version"
     implementation "androidx.core:core-ktx:$ktx_verion"
     implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
-    implementation 'com.google.android.material:material:1.3.0-alpha02'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    def nav_version = "2.3.0"
+    implementation "com.google.android.material:material:$material"
+    implementation "androidx.legacy:legacy-support-v4:$support_v4"
+    implementation "androidx.coordinatorlayout:coordinatorlayout:$coordinator_layout"
+
+    implementation "androidx.browser:browser:$browser"
+
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
     implementation "androidx.navigation:navigation-runtime:$nav_version"
 
-    def lifeCycleVersion = "2.2.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifeCycleVersion"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifeCycleVersion"
-    kapt "androidx.lifecycle:lifecycle-compiler:$lifeCycleVersion"
-    implementation "android.arch.lifecycle:extensions:$lifeCycleVersion"
-    implementation "androidx.activity:activity-ktx:1.1.0"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+//    kapt "androidx.lifecycle:lifecycle-compiler:$lifeCycleVersion"
+//    implementation "android.arch.lifecycle:extensions:$lifeCycleVersion"
+    implementation "androidx.activity:activity-ktx:$activity_version"
 
     //Network
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
-
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_loogin_version"
 
     //Glide
-    def glide_version = "4.11.0"
     implementation "com.github.bumptech.glide:glide:$glide_version"
     kapt "com.github.bumptech.glide:compiler:$glide_version"
     implementation "com.github.bumptech.glide:okhttp3-integration:$glide_version"
@@ -72,22 +81,35 @@ dependencies {
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
 
     //Room
-//    def room_version = "2.2.5"
-//    implementation "androidx.room:room-runtime:$room_version"
-//    kapt "androidx.room:room-compiler:$room_version" // For Kotlin use kapt instead of annotationProcessor
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version" // For Kotlin use kapt instead of annotationProcessor
     // optional - Kotlin Extensions and Coroutines support for Room
-//    implementation "androidx.room:room-ktx:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
 
-    //ThirdParty
-//    implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
-//    implementation 'com.github.smarteist:autoimageslider:1.3.9-appcompat'
-//    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
-    implementation 'com.jakewharton.timber:timber:4.7.1'
+    //Logging
+    implementation "com.jakewharton.timber:timber:$timber"
+
+    // Compose
+    implementation "androidx.compose.runtime:runtime:$composeVersion"
+    implementation "androidx.compose.ui:ui:$composeVersion"
+    implementation "androidx.compose.foundation:foundation:$composeVersion"
+    implementation "androidx.compose.foundation:foundation-layout:$composeVersion"
+    implementation "androidx.compose.material:material:$composeVersion"
+    implementation "androidx.compose.runtime:runtime-livedata:$composeVersion"
+    implementation "androidx.compose.ui:ui-tooling:$composeVersion"
+    implementation "com.google.android.material:compose-theme-adapter:$composeVersion"
 
 
+    //Dagger - Hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_compose_viewmodel"
+    kapt "androidx.hilt:hilt-compiler:1.0.0"
+    implementation "androidx.hilt:hilt-navigation-compose:$hilt_compose_navigation"
 
     //Test
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    testImplementation "junit:junit:$junit"
+    androidTestImplementation "androidx.test.ext:junit:$ext_junit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
 }

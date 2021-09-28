@@ -1,7 +1,9 @@
 package com.example.imageloader
 
 import android.content.Context
+import android.graphics.drawable.ColorDrawable
 import android.util.Log
+import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.bumptech.glide.GlideBuilder
 import com.bumptech.glide.Registry
@@ -45,8 +47,10 @@ class AppGlideModule : AppGlideModule() {
     fun requestOption(context: Context): RequestOptions {
         return RequestOptions()
             .centerCrop()
-            .placeholder(R.drawable.ic_placeholder_144)
-            .error(R.drawable.ic_placeholder_144)
+//            .placeholder(R.drawable.ic_temp_placeholder)
+//            .error(R.drawable.ic_temp_placeholder)
+            .placeholder(ColorDrawable(ContextCompat.getColor(context, R.color.color_placeholder)))
+            .error(ColorDrawable(ContextCompat.getColor(context, R.color.color_placeholder)))
             .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
             .skipMemoryCache(false)
             .format(DecodeFormat.PREFER_ARGB_8888)

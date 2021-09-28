@@ -1,10 +1,11 @@
 package com.example.network
 
-import com.example.model.ApiUser
+import com.example.model.NewsList
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 @JvmSuppressWildcards
 interface Webservice {
-    @GET("users")
-    suspend fun getUsers(): List<ApiUser>
+    @GET("top-headlines")
+    suspend fun getNewsHeadlines(@Query("country") country:String) : NewsList
 }

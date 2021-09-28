@@ -10,6 +10,8 @@
     <color name="white">#FFFFFF</color>
     <color name="colorToolbarTitle">#CCFFFFFF</color>
     <color name="colorDivider">#33F0F0F0</color>
+    <color name="color_placeholder">#1E2F37</color>
+    <color name="color_image_border">#1E2F37</color>
 
     <color name="colorBackground">@color/colorSurface</color>
     <color name="colorOnBackground">#D4D6D8</color>

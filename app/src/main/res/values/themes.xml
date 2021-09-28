@@ -14,6 +14,17 @@
     </style>
 
     <!--Top level DayNight theme to be used in AndroidManifest.xml-->
+    <style name="Theme.MyApp.Flat" parent="Theme.MyApp">
+        <item name="colorPrimary">@color/colorBackground</item>
+        <!-- colorPrimaryVariant: A lighter/darker variant of your primary brand color, used sparingly in theming -->
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <!--The secondary brand color of your app, used mostly as an accent for certain widgets that need to stand out-->
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <!-- colorSecondaryVariant: A lighter/darker variant of your secondary brand color, used sparingly in theming -->
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+    </style>
+
+    <!--Top level DayNight theme to be used in AndroidManifest.xml-->
     <style name="Theme.MyApp" parent="Base.Theme.MyApp"/>
     <!--Base custom theme which will be shared between both light and dark theme variants-->
     <style name="Base.Theme.MyApp" parent="Base.Theme.MaterialThemeBuilder">

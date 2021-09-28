@@ -2,8 +2,10 @@ package com.example.base
 
 import android.os.Bundle
 import com.example.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -15,7 +17,6 @@ class MainActivity : BaseActivity() {
 
         Timber.tag(MainActivity::class.java.simpleName)
         Timber.d("MainActivity")
-
     }
 }
 

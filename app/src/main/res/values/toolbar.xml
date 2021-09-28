@@ -4,6 +4,11 @@
        <item name="navigationIcon">@drawable/ic_back</item>
         <item name="colorControlNormal">@color/colorControlNormal</item>
     </style>
+    <style name="Widget.App.Toolbar.Flat" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="navigationIcon">@drawable/ic_back</item>
+        <item name="backgroundColor">@color/colorBackground</item>
+        <item name="colorControlNormal">@color/colorBackground</item>
+    </style>
     <style name="Widget.App.Toolbar.white" parent="Widget.MaterialComponents.Toolbar.Primary">
         <item name="navigationIcon">@drawable/ic_back</item>
         <item name="colorControlNormal">@color/colorToolbarTitleWhite</item>

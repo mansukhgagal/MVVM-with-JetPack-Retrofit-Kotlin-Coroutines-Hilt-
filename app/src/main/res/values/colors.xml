@@ -22,7 +22,9 @@
     <color name="colorToolbarTitle">#CC000000</color>
     <color name="colorToolbarTitleWhite">#FFFFFF</color>
     <color name="colorDivider">#E8E8E8</color>
-
+    <color name="color_placeholder">#d4d4d4</color>
+    <color name="color_image_border">#d4d4d4</color>
+    <color name="color_headline_strip">#DCB428</color>
     <!--
     Color
 Color attributes consist mainly of primary, secondary, error, surface and background colors, along with their respective secondary variants and “on” colors. Some of these have been reused from the AppCompat themes (eg. colorPrimary, colorError and android:colorBackground):
